@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Codelytv\CodingStyle\CodelyRules;
+use CodelyTv\CodingStyle\CodelyRules;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return function (ECSConfig $ecsConfig): void {

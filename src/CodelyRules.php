@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codelytv\CodingStyle;
+namespace CodelyTv\CodingStyle;
 
 final class CodelyRules
 {
