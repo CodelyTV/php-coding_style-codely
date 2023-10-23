@@ -1,0 +1,14 @@
+{
+    "name": "codelytv/coding-style",
+    "description": "PHP Coding Style rules we use in Codely",
+    "type": "library",
+    "keywords": ["static analysis", "code style"],
+    "autoload": {
+        "psr-4": {
+            "Codelytv\\CodingStyle\\": "src/"
+        }
+    },
+    "require": {
+        "symplify/easy-coding-standard": "^12.0"
+    }
+}
