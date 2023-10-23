@@ -29,16 +29,16 @@
     ```
 2. Add it to your `ecs.php` file:
     ```php
-    use CodelyTv\CodingStyle\CodelyRules;
+    use CodelyTv\CodingStyle;
     use Symplify\EasyCodingStandard\Config\ECSConfig;
 
     return function (ECSConfig $ecsConfig): void {
         $ecsConfig->paths([__DIR__ . '/src',]);
 
-        $ecsConfig->sets([CodelyRules::CODING_STYLE]);
+        $ecsConfig->sets([CodingStyle::DEFAULT]);
 
         // Or this if you prefer to have the code aligned
-        // $ecsConfig->sets([CodelyRules::CODING_STYLE_ALIGNED]);
+        // $ecsConfig->sets([CodingStyle::ALIGNED]);
     };
     ```
 3. Execute it:

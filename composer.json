@@ -4,9 +4,15 @@
     "type": "library",
     "keywords": ["static analysis", "code style"],
     "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Codely",
+            "homepage": "https://codely.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "CodelyTv\\CodingStyle\\": "src/"
+            "CodelyTv\\": "src/"
         }
     },
     "require": {
