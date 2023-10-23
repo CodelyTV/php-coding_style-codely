@@ -47,7 +47,13 @@
 
 - Lints PHP using PSR-12
 - Extends some config (you can see all the rules [here](src/coding_style.php))
-- Use tabs to indent ([reason](https://www.youtube.com/watch?v=yD2T42zsP7c))
+- Use tabs to indent ([reason](https://www.youtube.com/watch?v=yD2T42zsP7c)). If you want to use spaces, you can add the
+  following line at the end of your `ecs.php`:
+    ```php
+    use Symplify\EasyCodingStandard\ValueObject\Option;
+
+	$ecsConfig->indentation(Option::INDENTATION_SPACES);
+    ```
 
 ## 📦 How to release a new version
 
