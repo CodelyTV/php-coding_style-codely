@@ -3,6 +3,7 @@
     "description": "PHP Coding Style rules we use in Codely",
     "type": "library",
     "keywords": ["static analysis", "code style"],
+    "license": "AGPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "Codelytv\\CodingStyle\\": "src/"
