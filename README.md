@@ -29,7 +29,7 @@
     ```
 2. Add it to your `ecs.php` file:
     ```php
-    use Codelytv\CodingStyle\CodelyRules;
+    use CodelyTv\CodingStyle\CodelyRules;
     use Symplify\EasyCodingStandard\Config\ECSConfig;
 
     return function (ECSConfig $ecsConfig): void {
