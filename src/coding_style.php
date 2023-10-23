@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use PhpCsFixer\Fixer\ArrayNotation\TrimArraySpacesFixer;
 use PhpCsFixer\Fixer\Basic\SingleLineEmptyBodyFixer;
@@ -52,70 +54,74 @@ use Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
+return static function (ECSConfig $ecsConfig): void {
+	$ecsConfig->sets([SetList::PSR_12]);
 
-return static function (ECSConfig $ecsConfig) : void {
-    $ecsConfig->sets([SetList::PSR_12]);
+	$ecsConfig->rules([
+		// Imports
+		NoUnusedImportsFixer::class,
+		FullyQualifiedStrictTypesFixer::class,
+		GlobalNamespaceImportFixer::class,
+		NoLeadingImportSlashFixer::class,
+		// Arrays
+		TrimArraySpacesFixer::class,
+		// Blank lines
+		BlankLineAfterStrictTypesFixer::class,
+		NoBlankLinesAfterClassOpeningFixer::class,
+		// Spacing
+		SingleLineEmptyBodyFixer::class,
+		CastSpacesFixer::class,
+		TypeDeclarationSpacesFixer::class,
+		TypesSpacesFixer::class,
+		// Casing
+		ClassReferenceNameCasingFixer::class,
+		LowercaseStaticReferenceFixer::class,
+		MagicMethodCasingFixer::class,
+		NativeFunctionCasingFixer::class,
+		NativeFunctionTypeDeclarationCasingFixer::class,
+		// Architecture
+		FinalClassFixer::class,
+		FinalPublicMethodForAbstractClassFixer::class,
+		ProtectedToPrivateFixer::class,
+		VisibilityRequiredFixer::class,
+		DateTimeImmutableFixer::class,
+		NoUselessElseFixer::class,
+		// Operator
+		AssignNullCoalescingToCoalesceEqualFixer::class,
+		NoUselessConcatOperatorFixer::class,
+		NoUselessNullsafeOperatorFixer::class,
+		ObjectOperatorWithoutWhitespaceFixer::class,
+		TernaryToElvisOperatorFixer::class,
+		TernaryToNullCoalescingFixer::class,
+		// Testing
+		PhpUnitConstructFixer::class,
+		PhpUnitDedicateAssertFixer::class,
+		PhpUnitDedicateAssertInternalTypeFixer::class,
+		PhpUnitExpectationFixer::class,
+		// Other
+		LineLengthFixer::class,
+		NoNullPropertyInitializationFixer::class,
+		NoUnneededFinalMethodFixer::class,
+		SelfAccessorFixer::class,
+		SelfStaticAccessorFixer::class,
+		NoUnneededControlParenthesesFixer::class,
+		NoUnneededCurlyBracesFixer::class,
+		SimplifiedIfReturnFixer::class,
+		TrailingCommaInMultilineFixer::class,
+		DeclareStrictTypesFixer::class,
+		StrictComparisonFixer::class,
+		SingleQuoteFixer::class,
+		StatementIndentationFixer::class,
+	]);
 
-    $ecsConfig->rules([
-        // Imports
-        NoUnusedImportsFixer::class,
-        FullyQualifiedStrictTypesFixer::class,
-        GlobalNamespaceImportFixer::class,
-        NoLeadingImportSlashFixer::class,
-        // Arrays
-        TrimArraySpacesFixer::class,
-        // Blank lines
-        BlankLineAfterStrictTypesFixer::class,
-        NoBlankLinesAfterClassOpeningFixer::class,
-        // Spacing
-        SingleLineEmptyBodyFixer::class,
-        CastSpacesFixer::class,
-        TypeDeclarationSpacesFixer::class,
-        TypesSpacesFixer::class,
-        // Casing
-        ClassReferenceNameCasingFixer::class,
-        LowercaseStaticReferenceFixer::class,
-        MagicMethodCasingFixer::class,
-        NativeFunctionCasingFixer::class,
-        NativeFunctionTypeDeclarationCasingFixer::class,
-        // Architecture
-        FinalClassFixer::class,
-        FinalPublicMethodForAbstractClassFixer::class,
-        ProtectedToPrivateFixer::class,
-        VisibilityRequiredFixer::class,
-        DateTimeImmutableFixer::class,
-        NoUselessElseFixer::class,
-        // Operator
-        AssignNullCoalescingToCoalesceEqualFixer::class,
-        NoUselessConcatOperatorFixer::class,
-        NoUselessNullsafeOperatorFixer::class,
-        ObjectOperatorWithoutWhitespaceFixer::class,
-        TernaryToElvisOperatorFixer::class,
-        TernaryToNullCoalescingFixer::class,
-        // Testing
-        PhpUnitConstructFixer::class,
-        PhpUnitDedicateAssertFixer::class,
-        PhpUnitDedicateAssertInternalTypeFixer::class,
-        PhpUnitExpectationFixer::class,
-        // Other
-        LineLengthFixer::class,
-        NoNullPropertyInitializationFixer::class,
-        NoUnneededFinalMethodFixer::class,
-        SelfAccessorFixer::class,
-        SelfStaticAccessorFixer::class,
-        NoUnneededControlParenthesesFixer::class,
-        NoUnneededCurlyBracesFixer::class,
-        SimplifiedIfReturnFixer::class,
-        TrailingCommaInMultilineFixer::class,
-        DeclareStrictTypesFixer::class,
-        StrictComparisonFixer::class,
-        SingleQuoteFixer::class,
-        StatementIndentationFixer::class,
-    ]);
+	$ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
+	$ecsConfig->ruleWithConfiguration(LineLengthFixer::class, [LineLengthFixer::LINE_LENGTH => 120]);
+	$ecsConfig->ruleWithConfiguration(
+		YodaStyleFixer::class,
+		['equal' => false, 'identical' => false, 'less_and_greater' => false]
+	);
+	$ecsConfig->ruleWithConfiguration(PhpUnitMethodCasingFixer::class, ['case' => PhpUnitMethodCasingFixer::SNAKE_CASE]);
+	$ecsConfig->ruleWithConfiguration(OrderedTypesFixer::class, ['null_adjustment' => 'always_last']);
 
-    $ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
-    $ecsConfig->ruleWithConfiguration(LineLengthFixer::class, [LineLengthFixer::LINE_LENGTH => 120]);
-    $ecsConfig->ruleWithConfiguration(YodaStyleFixer::class, ['equal' => false, 'identical' => false, 'less_and_greater' => false]);
-    $ecsConfig->ruleWithConfiguration(PhpUnitMethodCasingFixer::class, ['case' => PhpUnitMethodCasingFixer::SNAKE_CASE]);
-    $ecsConfig->ruleWithConfiguration(OrderedTypesFixer::class, ['null_adjustment' => 'always_last']);
+	$ecsConfig->indentation('tab');
 };
