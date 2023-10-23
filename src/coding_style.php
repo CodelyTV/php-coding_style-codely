@@ -46,6 +46,7 @@ use PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
+use PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\TypeDeclarationSpacesFixer;
 use PhpCsFixer\Fixer\Whitespace\TypesSpacesFixer;
@@ -66,6 +67,7 @@ return static function (ECSConfig $ecsConfig): void {
 		NoLeadingImportSlashFixer::class,
 		// Arrays
 		TrimArraySpacesFixer::class,
+		ArrayIndentationFixer::class,
 		// Blank lines
 		BlankLineAfterStrictTypesFixer::class,
 		NoBlankLinesAfterClassOpeningFixer::class,
