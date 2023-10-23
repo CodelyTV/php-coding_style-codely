@@ -36,6 +36,9 @@
         $ecsConfig->paths([__DIR__ . '/src',]);
 
         $ecsConfig->sets([CodelyRules::CODING_STYLE]);
+
+        // Or this if you prefer to have the code aligned
+        // $ecsConfig->sets([CodelyRules::CODING_STYLE_ALIGNED]);
     };
     ```
 3. Execute it:
