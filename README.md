@@ -49,12 +49,17 @@
 - Extends some config (you can see all the rules [here](src/coding_style.php))
 - Use tabs to indent ([reason](https://www.youtube.com/watch?v=yD2T42zsP7c))
 
-## 👌 Codely Code Quality Standards
+## 📦 How to release a new version
+
+Simply create a new [GitHub Release](https://github.com/CodelyTV/php-coding_style-codely/releases/new) following
+semantic versioning.
+
+## 👌 Codely Code Quality Standards
 
 Publishing this package we are committing ourselves to the following code quality standards:
 
 - 🤝 Respect **Semantic Versioning**: No breaking changes in patch or minor versions
-- 🤏 No surprises in transitive dependencies: Use the **bare minimum dependencies** needed to meet the purpose
-- 🎯 **One specific purpose** to meet without having to carry a bunch of unnecessary other utilities
+- 🤏 No surprises in transitive dependencies: Use the **bare minimum dependencies** needed to meet the purpose
+- 🎯 **One specific purpose** to meet without having to carry a bunch of unnecessary other utilities
 - 📖 **Well documented Readme** showing how to install and use
 - ⚖️ **License favoring Open Source** and collaboration
