@@ -12,7 +12,6 @@ use PhpCsFixer\Fixer\Casing\NativeFunctionCasingFixer;
 use PhpCsFixer\Fixer\Casing\NativeFunctionTypeDeclarationCasingFixer;
 use PhpCsFixer\Fixer\CastNotation\CastSpacesFixer;
 use PhpCsFixer\Fixer\ClassNotation\FinalClassFixer;
-use PhpCsFixer\Fixer\ClassNotation\FinalPublicMethodForAbstractClassFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoNullPropertyInitializationFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoUnneededFinalMethodFixer;
