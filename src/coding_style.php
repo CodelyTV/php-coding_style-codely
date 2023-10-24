@@ -84,7 +84,6 @@ return static function (ECSConfig $ecsConfig): void {
 		NativeFunctionTypeDeclarationCasingFixer::class,
 		// Architecture
 		FinalClassFixer::class,
-		FinalPublicMethodForAbstractClassFixer::class,
 		ProtectedToPrivateFixer::class,
 		VisibilityRequiredFixer::class,
 		DateTimeImmutableFixer::class,
