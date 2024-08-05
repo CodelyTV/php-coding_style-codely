@@ -74,7 +74,6 @@ return static function (ECSConfig $ecsConfig): void {
 		SingleLineEmptyBodyFixer::class,
 		CastSpacesFixer::class,
 		TypeDeclarationSpacesFixer::class,
-		TypesSpacesFixer::class,
 		// Casing
 		ClassReferenceNameCasingFixer::class,
 		LowercaseStaticReferenceFixer::class,
@@ -115,6 +114,7 @@ return static function (ECSConfig $ecsConfig): void {
 		StatementIndentationFixer::class,
 	]);
 
+	$ecsConfig->ruleWithConfiguration(TypesSpacesFixer::class, ['space' => 'single', 'space_multiple_catch' => 'single']);
 	$ecsConfig->ruleWithConfiguration(ArraySyntaxFixer::class, ['syntax' => 'short']);
 	$ecsConfig->ruleWithConfiguration(LineLengthFixer::class, [LineLengthFixer::LINE_LENGTH => 120]);
 	$ecsConfig->ruleWithConfiguration(
